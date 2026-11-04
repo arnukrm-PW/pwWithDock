@@ -4,33 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-"test:api": "playwright test --grep @api",
-"test:e2e": "playwright test --grep @e2e",
-"test:master": "playwright test --grep @master",
-"test:sanity": "playwright test --grep @sanity --headed",
-"test:regression": "playwright test --grep @regression --headed"
-},
+    "test:api": "playwright test --grep @api",
+    "test:e2e": "playwright test --grep @e2e",
+    "test:master": "playwright test --grep @master",
+    "test:sanity": "playwright test --grep @sanity --headed",
+    "test:regression": "playwright test --grep @regression --headed"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.64.1",
-    "@types/node": "^26.6.6"
+    "@types/node": "^26.6.6",
+    "allure-playwright": "^3.14.0"
   },
   "dependencies": {
     "@axe-core/playwright": "^4.14.0",
     "@faker-js/faker": "^10.6.0",
     "ajv": "^8.20.0",
-    "allure-playwright": "^3.14.0",
     "csv-parser": "^3.2.1",
     "dotenv": "^18.0.9",
     "luxon": "^3.7.2",
     "mysql2": "^3.24.6",
     "xlsx": "^0.18.5"
   }
-
-
-
-  
 }
