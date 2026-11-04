@@ -65,10 +65,18 @@ jobs:
         $tag = $suite -replace 'test:'
         $browserFlag = "--project=$browser"
         $modeFlag = if ($mode -eq 'headed') { '--headed' } else { ''}
+        $pwArg = @(
+        'test'
+        '--grep'
+        "@$tag"
+        "--project=$browser"
+        "--reporter=html"
+        "--output=test-results"
+              
+        )
 
 
-
-        npx playwright test --grep "@$tag" ; $browserFlag ; $modeFlag ; --reporter=html ; --output=test
+        npx playwright $pwArg
 
 
       env:
