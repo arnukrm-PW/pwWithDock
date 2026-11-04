@@ -1,0 +1,34 @@
+# =============================================================================
+# Docker Compose — Playwright + TypeScript Automation Framework
+# =============================================================================
+# Usage:
+#   docker compose build                          # Build the image
+#   docker compose run --rm playwright-tests      # Run all tests
+#   docker compose run --rm playwright-tests sanity
+#   docker compose run --rm playwright-tests regression
+#   docker compose run --rm playwright-tests web
+#   docker compose run --rm playwright-tests api
+#   docker compose run --rm playwright-tests master
+#   docker compose run --rm playwright-tests e2e
+#   docker compose run --rm playwright-tests datadriven
+#
+# Pass extra Playwright args:
+#   docker compose run --rm playwright-tests web --headed --workers 2
+
+# =============================================================================
+
+services:
+  playwright:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: playwright-tests
+
+    volumes:
+      - ./playwright-report:/app/playwright-report
+      - ./test-results:/app/test-results
+      - ./allure-results:/app/allure-results
+
+    command: npx playwright test
+
