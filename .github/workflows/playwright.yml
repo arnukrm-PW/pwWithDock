@@ -57,10 +57,10 @@ jobs:
       run: Copy-Item .env.example .env
 
     - name: Run Playwright tests
-      run: 
+      run: |
         $suite = "${{github.event.inputs.test_suite || 'test:e2e'}}"
         $browser = "${{github.event.inputs.browser || 'chromium'}}"
-        $mode = "${{github.enent.inputs.mode || 'headless'}}"
+        $mode = "${{github.event.inputs.mode || 'headless'}}"
 
         $tag = $suite -replace 'test:'
         $browserFlag = "--project=$browser"
@@ -76,21 +76,21 @@ jobs:
       if: always()
       with:
         name: playwright-report
-        path: playwright-report/
+        path: reports/
         retention-days: 30
 
     - name: Upload Playwright HTML Report
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: playwright-report
-        path: playwright-report/
+        name: custom-report
+        path: custom-report/
         retention-days: 30
 
     - name: Upload Custom Report
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: playwright-report
-        path: playwright-report/
+        name: allure-results
+        path: allure-results/
         retention-days: 30       
