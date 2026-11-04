@@ -67,7 +67,7 @@ jobs:
         $modeFlag = if ($mode -eq 'headed') { '--headed' } else { ''}
 
 
-        npx playwright test --grep "@$tag" ; $browserFlag ; $modeFlag --reporter=dot --output=test
+        npx playwright test --grep "@$tag" ; $browserFlag ; $modeFlag --reporter=html --output=test
       env:
         CI: "1"
 
