@@ -106,9 +106,9 @@ pipeline {
               <a href="${env.BUILD_URL}Custom_20Test_20Report">Open Custom Report</a>
             </p>
         """,
-        to: "RECIVER_EMAIL_ADDRESS", //Replace with the recipient's email address
+        to: "arnukrm0@gmail.com", //Replace with the recipient's email address
         from: "SENDER_EMAIL_ADDRESS", //Replace with the sender's email address
-        replyTo: "RECIVER_EMAIL_ADDRESS",  //Replace with the recipient's email address
+        replyTo: "arnukrm0@gmail.com",  //Replace with the recipient's email address
         mimeType: "text/html" //Defines the format of the email body. text/html allows HTML formatting (tables, colors, bold text, links, etc.).
       )
     }
