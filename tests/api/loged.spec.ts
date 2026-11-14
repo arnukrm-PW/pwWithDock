@@ -1,6 +1,6 @@
 import{test,expect,Locator}from'@playwright/test'
 
-test('TC01 - select the checkBox XS',async ({page})=>{
+test('TC01 - select the checkBox XS',{tag:'@sanity'},async ({page})=>{
 
     await page.goto("https://zigzag.lk/collections/all")
     const overlayItem =  page.getByText("Try your luck, win a discount!").first()
